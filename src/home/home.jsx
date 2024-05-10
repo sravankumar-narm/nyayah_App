@@ -28,16 +28,23 @@ import userid from '../assets/Images/home/userid.png';
 import password1 from '../assets/Images/home/password.png';
 //import { FaMagnifyingGlass, FaCheckCircle, FaEnvelope } from 'react-icons/fa';
 import loginImage from '../assets/Images/home/loginImage.png';
+import loginImageHover from '../assets/Images/home/loginhover.png';
+import loginImageActive from '../assets/Images/home/afterlogin.png';
+import { useNavigate } from "react-router-dom";
+import visible from '../assets/Images/home/visible.png';
+import invisible from '../assets/Images/home/invisibleIcon.png';
 
 const Home = () => {
   const [showPricing, setShowPricing] = useState(false);
   const [showAboutUs, setShowAboutUs] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [showForm2, setShowForm2] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -46,6 +53,10 @@ const Home = () => {
 
   const toggleFormVisibility = () => {
     setShowForm(!showForm);
+  };
+
+  const toggleFormVisibility2 = () => {
+    setShowForm(!showForm2);
   };
 
   const handleHomeClick = () => {
@@ -64,6 +75,7 @@ const Home = () => {
     setShowPricing(false); 
     setShowLoginForm(true)
   };
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -83,17 +95,27 @@ const Home = () => {
       const responseData = await response.json();
 
       if (response.ok) {
+        navigate("/dashboard");
         console.log('Login successful!');
+        setErrorMessage('');
+        if (responseData && responseData.response === 'success') {
+          setSuccessMessage(responseData.data);
+        }
       } else {
         if (responseData && responseData.detail && responseData.detail.response === 'fail') {
-          setErrorMessage(responseData.detail.data);
+          console.error('Login failed:', responseData.detail.data); 
+          setErrorMessage(responseData.detail.data); 
+          setSuccessMessage('');
         } else {
+          console.error('An unknown error occurred while logging in.');
           setErrorMessage('An unknown error occurred while logging in.');
+          setSuccessMessage('');
         }
       }
     } catch (error) {
       console.error('Login failed:', error);
       setErrorMessage('An error occurred while logging in.');
+      setSuccessMessage('');
     }
 
   };
@@ -106,33 +128,33 @@ const Home = () => {
     </div>
     <div className={styles.backgroundImageFront} style={{width: "1390px", height: 892, marginTop: -892, backgroundImage: `url(${opagueImage})`, backgroundSize: 'cover', backgroundPosition: 'center', marginLeft:"-100px" }}>
     </div>
-      <div className={styles.logoContainer} style={{ position: 'absolute', top: '10px', left: '85px' }}>
+      <div className={styles.logoContainer} style={{ position: 'absolute', top: '10px', left: '10px' }}>
         <img src={nyayahImage} alt="Nyayah Logo" width={260} height={148} />
       </div>
   <div className={styles.navigationContainer} style={{ position: 'absolute', top: '26px', marginLeft:"320px",cursor:'pointer',left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', fontFamily: 'Open Sans', fontSize: '16px', fontWeight: '600' }}>
   <div className={styles.navigationItem} style={{ display: 'flex', alignItems: 'center' }}>
-    <img src={homeIcon} alt="Home Icon" width={20} height={17} style={{ marginRight: '10px' }} />
-    <span style={{ marginLeft: '5px',marginRight:"15px" }} onClick={handleHomeClick}>Home</span>
+    <img src={homeIcon} alt="Home Icon" width={20} height={17} style={{ marginRight: '5px' }} />
+    <span style={{ marginRight:"20px" }} onClick={handleHomeClick}>Home</span>
   </div>
   <div className={styles.navigationItem} style={{ display: 'flex', alignItems: 'center',marginRight:"30px" }}>
-    <img src={pricingIcon} alt="Pricing Icon" width={11.39} height={11} style={{ marginRight: '10px' }} />
+    <img src={pricingIcon} alt="Pricing Icon" width={11.39} height={11} style={{ marginRight: '0px' }} />
     <span style={{ marginLeft: '5px' }}onClick={() => setShowPricing(true)}>Pricing</span>
   </div>
   <div className={styles.navigationItem} style={{ display: 'flex', alignItems: 'center' }}>
-    <img src={aboutIcon} alt="About Icon" width={25.03} height={22.17} style={{ marginRight: '10px' }} />
+    <img src={aboutIcon} alt="About Icon" width={25.03} height={22.17} style={{ marginRight: '0px' }} />
     <span style={{ marginLeft: '5px' ,whiteSpace:"nowrap"}}onClick={handleAboutUsClick}>About Us</span>
   </div>
-  <div className={styles.navigationItem} style={{ display: 'flex', alignItems: 'center', marginLeft:"20px" }}>
-    <img src={loginIcon} alt="Login Icon" width={19.95} height={20} style={{ marginRight: '10px' }} />
+  <div className={styles.navigationItem} style={{ display: 'flex', alignItems: 'center', marginLeft:"30px" }}>
+    <img src={loginIcon} alt="Login Icon" width={19.95} height={20} style={{ marginRight: '0px' }} />
     <span style={{ marginLeft: '5px' }}onClick={handleLoginClick}>Login</span>
   </div>
 </div>
 {showPricing ? (
-    <div style={{ position: 'absolute', left: '830px', top: '234px', width: '364px', height: '423px', fontFamily: 'Open Sans', fontWeight: '600', fontSize: '10px', fontStyle: 'italic' }}>
+    <div style={{ position: 'absolute', left: '830px', top: '144px', width: '364px', height: '423px', fontFamily: 'Open Sans', fontWeight: '600', fontSize: '10px', fontStyle: 'italic' }}>
     {/* Pricing Content */}
     <div className={styles.pricingContainer} style={{ fontFamily: 'Open Sans', fontWeight: '600', fontSize: '18px', fontStyle: 'italic' }}>
     <p style={{ fontSize: '18px', lineHeight: '3' , textAlign:"center"}}>
-    <img src={doubleQuotes} alt="First Inverted Comma" width={25} height={30}style={{ position:"absolute",marginTop: '5px' }} />
+    <img src={doubleQuotes} alt="First Inverted Comma" width={25} height={30}style={{ position:"absolute",marginTop: '12px' }} />
       Initiate an evaluative period <br />
       of our legal app, sans any <br />
       pecuniary obligation. <br />
@@ -141,9 +163,13 @@ const Home = () => {
       Subscription may be effectuated <br />
       subsequent to attainment of comfort <br />
       and assurance in its efficacy.
-      <img src={doubleQuotes1}alt="Second Inverted Comma" width={25} height={20}style={{ marginTop: '-50px', marginLeft:"350px" }} />
+      <img src={doubleQuotes1}alt="Second Inverted Comma" width={25} height={20}style={{ marginTop: '-23px', marginLeft:"350px" }} />
     </p>
+    <div className={styles.buttonContainer} style={{ width: '370px', height: '30px', backgroundColor: 'black', display: 'flex', justifyContent: 'center', marginTop:"100px", alignItems: 'center', borderRadius:"5px", fontFamily:"Open Sans",fontSize:"15px", fontWeight:"500" }}>
+    <button className={styles.button} style={{ color: 'white', backgroundColor: 'black', border: 'none', textAlign: 'center', cursor: 'pointer' }} onClick={toggleFormVisibility2}>Get started with Nyayah - just contact us!</button>
+    </div>
       {/* Add your pricing content here */}
+      
     </div>
   </div>
 ) : showAboutUs ? (
@@ -187,8 +213,8 @@ upholding the highest standards of professionalism in every aspect of our operat
 <br></br>
 <br></br>
 
-<p style={{ fontFamily: 'Open Sans', fontSize: '12px', lineHeight: '1.5', fontWeight:600 , color:"#323232" }}>
-  <img src={mailIcon} alt="Mail Icon" width="18" height="19" style={{ display: "inline-block", verticalAlign: "middle",marginRight:"5px" }} />
+<p style={{ fontFamily: 'Open Sans', fontSize: '12px', lineHeight: '1.5', fontWeight:600 , color:"#323232" , marginTop:"-45px"}}>
+  <img src={mailIcon} alt="Mail Icon" width="16" height="17" style={{ display: "inline-block", verticalAlign: "middle",marginRight:"5px" }} />
   <u><a href="mailto:info@nyayah.in">info@nyayah.in</a></u>| 
   <u><a href="mailto:sales@nyayah.in">sales@nyayah.in</a></u>
 </p>
@@ -215,7 +241,7 @@ upholding the highest standards of professionalism in every aspect of our operat
         <label htmlFor="message">Message</label><br />
         <textarea id="message" name="message" rows="4" placeholder="Text" style={{ width: '336px', height:'174px' , border: '2px solid #B2B2B2', borderRadius: '5px',marginBottom: '15px' }}></textarea>
       </div>
-      <button type="submit" className={styles.sendMessageButton} style={{ backgroundColor: '#7A7A7A', height: '30px', width: '335px', borderRadius: '5px', border: 'none', color: '#fff', fontFamily:"Open Sans", fontWeight:600 , marginLeft:"22px"}}>Send Message</button>
+      <button type="submit" className={styles.sendMessageButton} style={{ backgroundColor: 'black', height: '30px', width: '335px', borderRadius: '5px', border: 'none', color: '#fff', fontFamily:"Open Sans", fontWeight:600 , marginLeft:"22px", marginTop:"40px"}}>Send Message</button>
     </form>
   </div>
   </div>
@@ -233,31 +259,28 @@ upholding the highest standards of professionalism in every aspect of our operat
             style={{ position: 'absolute', left: '270px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
             onClick={togglePasswordVisibility}
           >
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
+            {showPassword ? <img src={visible} alt="Visible"  width="17px" height="17px" /> : <img src={invisible} alt="Invisible"  width="15px" height="15px" />}
           </div>
       
           <button
-  onClick={handleSubmit}
-  style={{
-    position: 'absolute',
-    
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: '63px',
-    marginLeft:"5px",
-    height: '47px',
-    border: 'none',
-    background: 'none',
-    cursor: 'pointer'
-  }}
->
-  <img src={loginImage} alt="Right img" style={{ width: '100%', height: '100%' }} />
-</button>
+          onClick={handleSubmit}
+          className={styles.loginButton}
+        >
+        
+          <img src={loginImage} alt="Login Button" className={styles.defaultImage} />
+          <img src={loginImageHover} alt="Login Button" className={styles.hoverImage} />
+          <img src={loginImageActive} alt="Login Button" className={styles.activeImage} />
+        </button>
+
       </div>
+      
     <div style={{ marginBottom: '20px', position: 'relative' }}>
   <p style={{ textDecoration: 'underline', fontSize: '10px' , color:"#323232", marginLeft:"175px", marginTop:"-10px"}}>Forgot Password?</p>
 </div>
+{errorMessage && <p style={{ color: 'black', marginTop:"35px" }}>{errorMessage}</p>}
+{/* {successMessage && <p style={{ color: 'green', marginTop:"35px" }}>{successMessage}</p>} */}
     </div>
+    
 ) : (
   
   <div>
@@ -321,15 +344,15 @@ and Reports </p>
 
 {showAboutUs ? null : (
   <>
-  {!showLoginForm && (
-    <div className={styles.buttonContainer} style={{ position: 'absolute', left: '817px', top: '680px', width: '370px', height: '30px', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius:"5px" }}>
-      <button className={styles.button} style={{ color: 'white', backgroundColor: 'black', border: 'none', textAlign: 'center', cursor: 'pointer' }} onClick={toggleFormVisibility}>Contact US</button>
+  {!showLoginForm && !showPricing && (
+    <div className={styles.buttonContainer} style={{ position: 'absolute', left: '825px', top: '680px', width: '370px', height: '30px', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius:"5px" }}>
+      <button className={styles.button} style={{ color: 'white', backgroundColor: 'black', border: 'none', textAlign: 'center', cursor: 'pointer' }} onClick={toggleFormVisibility}>Contact us to know more</button>
     </div>
   )}
     <div className={styles.textContainer} style={{ position: 'absolute', left: '730px', top: '786px', width: '563px', height: '46px', fontFamily: 'Open Sans', fontSize: '10px' }}>
       © 2024 NARM Tech - an AI Products Company | Visited by 0,0,000 User | All Rights Reserved
     </div>
-    <div className={styles.formContainer} style={{ position: 'absolute', left: '797px',top: '201px' , bottom: showForm ? '0px' : '-479px', width: '379px', height: '479px', backgroundColor: 'white', borderRadius: '5px', transition: 'bottom 0.5s ease-in-out', display: showForm ? 'block' : 'none' }}>
+    <div className={styles.formContainer} style={{ position: 'absolute', left: '817px',top: '201px' , bottom: showForm ? '0px' : '-479px', width: '379px', height: '479px', backgroundColor: 'white', borderRadius: '5px', transition: 'bottom 0.5s ease-in-out', display: showForm ? 'block' : 'none' }}>
          
             <form className={styles.contactForm} style={{fontFamily:"Open Sans",fontSize:"15px", fontWeight:"600", marginLeft:"18px"}}>
       <div className={styles.formGroup} style={{textAlign:"left"}}>
@@ -355,6 +378,33 @@ and Reports </p>
 
     </form>
           </div>
+          {/* for pricing */}
+          <div className="absolute left-[400px] top-[400px] transform -translate-y-1/2" style={{ bottom: showForm2 ? '0px' : '-479px', width: '379px', height: '479px', backgroundColor: 'white', borderRadius: '5px', transition: 'bottom 0.5s ease-in-out', display: showForm2 ? 'block' : 'none' }}>
+         
+         <form className={styles.contactForm} style={{fontFamily:"Open Sans",fontSize:"15px", fontWeight:"600", marginLeft:"18px"}}>
+   <div className={styles.formGroup} style={{textAlign:"left"}}>
+     <label htmlFor="name">Name</label><br />
+     <input type="text" id="name" name="name"  placeholder="Text"   style={{ width: '336px',height:'30px', border: '2px solid #B2B2B2', borderRadius: '5px' ,marginBottom: '15px' }} />
+   </div>
+   
+   <div className={styles.formGroup} style={{textAlign:"left"}}>
+     <label htmlFor="mobile">Mobile Number</label><br />
+     <input type="text" id="mobile" name="mobile" placeholder="Text" style={{ width: '336px', height:'30px' , border: '2px solid #B2B2B2', borderRadius: '5px',marginBottom: '15px' }}/>
+   </div>
+   <div className={styles.formGroup} style={{textAlign:"left"}}>
+     <label htmlFor="email">Email Address</label><br />
+     <input type="email" id="email" name="email"  placeholder="Text" style={{ width: '336px' , height:'30px', border: '2px solid #B2B2B2', borderRadius: '5px',marginBottom: '15px' }}/>
+   </div>
+   <div className={styles.formGroup} style={{textAlign:"left"}}>
+     <label htmlFor="message">Message</label><br />
+     <textarea id="message" name="message" rows="4" placeholder="Text" style={{ width: '336px', height:'174px' , border: '2px solid #B2B2B2', borderRadius: '5px',marginBottom: '15px' }}></textarea>
+   </div>
+   <button type="submit" className={styles.sendMessageButton} style={{ backgroundColor: '#7A7A7A', height: '30px', width: '335px', borderRadius: '5px', border: 'none', color: '#fff', fontFamily:"Open Sans", fontWeight:600 ,marginLeft:"-20px"}}>Send Message</button>
+   {/* Error message */}
+   {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+
+ </form>
+       </div>
   </>
 )}
 
