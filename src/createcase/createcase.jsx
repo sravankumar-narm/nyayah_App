@@ -120,16 +120,27 @@ const CreateCase = () => {
   </div>
   <div className="flex items-center">
     <select className="w-64 h-10 border border-gray-400 rounded-md pl-2 text-xs">
-      <option value="">Priority</option>
+      <option value="">Case Stage</option>
       {/* Add options here */}
     </select>
     <img src={newimg} className="h-6 w-5 ml-2" alt="Icon 4" />
   </div>
+  <div className="flex whitespace-no-wrap">
+  <div className="flex items-center mb-4 mr-4">
+    <label htmlFor="caseRegistrationDate" className="mr-2 whitespace-no-wrap" style={{fontSize:"12px", marginTop:"20px"}}>Case Reg Date:</label>
+    <input type="date" id="caseRegistrationDate" className="w-32 h-8 border border-gray-400 rounded-md pl-2 text-xs" />
+  </div>
+  <div className="flex items-center">
+    <label htmlFor="caseRecordedDate" className="mr-2 whitespace-no-wrap " style={{fontSize:"12px"}}>Case Recorded Date:</label>
+    <input type="date" id="caseRecordedDate" className="w-32 h-8 border border-gray-400 rounded-md pl-2 text-xs" />
+  </div>
+</div>
+
 </div>
 
 
     
-    <div className="flex mt-4 ml-40 " style={{marginTop:"250px", marginLeft:"-1270px"}}>
+    <div className="flex mt-4 ml-40 " style={{marginTop:"290px", marginLeft:"-1470px"}}>
  
   <div className="w-4 h-4 mt-2 flex items-center justify-center mr-6" style={{marginLeft:"310px"}}>
   <img src={icon1} alt="Logo"  />
@@ -168,7 +179,7 @@ const CreateCase = () => {
   </div>
 </div>
 
-<div className="flex mt-4 ml-40 " style={{marginTop:"300px", marginLeft:"-912px"}}>
+<div className="flex mt-4 ml-40 " style={{marginTop:"340px", marginLeft:"-912px"}}>
  
   <div className="w-4 h-4 mt-2 flex items-center justify-center mr-6">
   <img src={icon2} alt="Logo"  />
@@ -204,7 +215,7 @@ const CreateCase = () => {
   </div>
 </div>
 
-<div className="flex mt-4 ml-40 " style={{marginTop:"350px", marginLeft:"-877px"}}>
+<div className="flex mt-4 ml-40 " style={{marginTop:"390px", marginLeft:"-877px"}}>
  
   <div className="w-4 h-4 mt-2 flex items-center justify-center mr-6">
   <img src={icon3} alt="Logo"  />
@@ -239,7 +250,7 @@ const CreateCase = () => {
     </div>
   </div>
 </div>
-<div className="flex mt-4 ml-40 " style={{marginTop:"400px", marginLeft:"-877px"}}>
+<div className="flex mt-4 ml-40 " style={{marginTop:"440px", marginLeft:"-877px"}}>
  
  <div className="w-4 h-4 mt-2 flex items-center justify-center mr-6">
  <img src={icon4} alt="Logo"  />

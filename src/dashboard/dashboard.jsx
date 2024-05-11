@@ -490,7 +490,7 @@ const Dashboard = () => {
         </label>
       </div>
 
-      <img src={info} style={{width:"24px", height:"24px", marginTop:"340px", marginLeft:"-15px"}}/>
+      <img src={info} style={{width:"15px", height:"15px", marginTop:"345px", marginLeft:"-15px"}}/>
       <div className="flex items-center justify-between px-6 mt-[70px] ml-[40px]">
         
       <div className="priority-buttons">
@@ -518,7 +518,7 @@ const Dashboard = () => {
       ></span>
     </div>
     </div>
-    <img src={info} style={{width:"24px", height:"24px", marginTop:"340px", marginLeft:"-15px"}}/>
+    <img src={info} style={{width:"15px", height:"15px", marginTop:"345px", marginLeft:"-15px"}}/>
       <div className="flex items-center justify-between px-8 mt-[70px] ml-[90px]">
         
       <div className="case-type-buttons">
