@@ -12,6 +12,9 @@ import {
 import Home from "./home/home.jsx";
 import Layout from "./pages/Layout.jsx";
 import AddUser from './adduser/adduser.jsx';
+import CreateCase from './createcase/createcase.jsx';
+import Dashboard from './dashboard/dashboard.jsx';
+import Sidebar from './sidebar/Sidebar.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +26,9 @@ function App() {
       <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="adduser" element={<AddUser />} />
+            <Route path="createcase" element={<CreateCase />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="sidebar" element={<Sidebar/>} />
 
         </Route>
       </Routes>

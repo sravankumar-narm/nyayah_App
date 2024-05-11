@@ -1,0 +1,150 @@
+/* Sidebar.css */
+
+/* Sidebar container */
+.sidebar-main {
+    display: flex;
+    width: 60px; /* Default width */
+    transition: width 0.3s ease; /* Smooth transition for width change */
+    background: black;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   /* margin-left: 55px; */
+   margin-left: -3px;
+    margin-top: 20px;
+    position: fixed;
+    font-size: 13.5px;
+}
+
+.sidebar-container {
+ 
+
+  height: calc(100vh - 50px);
+  
+}
+/* Expanded state */
+.main-app.expanded .sidebar-main {
+    width: 200px; /* Expanded width */
+    display: flex;
+    transition: width 0.3s ease; /* Smooth transition for width change */
+    background: black;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   /* margin-left: 55px; */
+    /* margin-top: 30px; */
+    margin-left: -3px;
+    position: fixed;
+}
+
+/* Container for the content */
+.layout-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+}
+
+/* Main content */
+.main-div-content {
+    flex: 1;
+    margin-left: 60px; /* Match the width of the sidebar */
+}
+
+/* Expand button */
+.expand-button{
+  position: absolute;
+  width: 10px;
+  height:30px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: width 0.3s ease;
+}
+
+.expand-button.expanded {
+  
+  margin-left: 150px;
+  transition: width 0.3s ease;
+}
+
+/* Sidebar list */
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    gap: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 999;
+}
+
+.sidebar-list.expanded {
+  padding-left: 40px; /* Increase padding when expanded */
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 999;
+}
+
+
+/* Line separator */
+.line1 {
+    width: 102px;
+    height: 2px;
+    margin-left: -65px;
+}
+
+.main-app.expanded .line1 {
+  margin-left: -65px; /* Adjust the margin when expanded */
+}
+
+/* Line 2 image */
+.expandLine {
+  width: 102px; /* Set the width of line 2 image */
+  height: 2px; /* Set the height of line 2 image */
+  margin-left: -45px; /* Adjust the margin */
+}
+
+/* Expanded state */
+.main-app.expanded .expandLine {
+  margin-left: -135px; /* Adjust the margin when expanded */
+}
+.sidebar-container {
+  position: relative; /* Ensure the container is positioned relatively */
+}
+
+/* Tooltip */
+.sidebar-tooltip {
+    background-color: #313265 !important;
+    color: #fff !important;
+    opacity: 1 !important;
+    max-width: 200px !important;
+    z-index: 1000;
+}
+
+/* Nav icon */
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Additional styles for nav links if needed */
+.nav-text {
+  color: white;
+  margin-left: 10px; /* Adjust as needed */
+  vertical-align: middle; /* Align text vertically with the icon */
+  white-space: nowrap;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  text-decoration: none; /* Remove default underline */
+}
+
+.nav-content {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
