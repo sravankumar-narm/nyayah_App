@@ -55,15 +55,24 @@ const CreateCase = () => {
 </div>
 <div className="flex z-0" >
 <div className="p-4 rounded-lg" style={{ marginLeft: "150px", marginTop: "100px" }}>
-  <input 
-    type="text" 
-    className="border border-gray-400 rounded-lg pl-2 mr-2 text-xs" 
-    placeholder="Case Title" 
-    style={{ width: "970px", height: "45px", outline: "none", cursor: "text" }}
-  />
+    <div className="flex">
+      <input 
+        type="text" 
+        className="border border-gray-400 rounded-lg pl-2 mr-2 text-xs" 
+        placeholder="Case Number" 
+        style={{ width: "150px", height: "45px", outline: "none", cursor: "text" }}
+      />
+      <input 
+        type="text" 
+        className="border border-gray-400 rounded-lg pl-2 mr-2 text-xs" 
+        placeholder="Case Title" 
+        style={{ width: "820px", height: "45px", outline: "none", cursor: "text" }}
+      />
+    </div>
+  
 
 
-    <div className="flex mt-2 items-center">
+    <div className="flex mt-4 items-center">
       <select className="w-[420px] h-10 border border-gray-400 rounded-md pl-2 mr-1 text-xs">
         <option value="">Plaintiff</option>
         {/* Add options here */}
@@ -289,7 +298,7 @@ const CreateCase = () => {
  </div>
 </div>
 <div className="flex justify-center mt-4">
-  <button className="w-[120px] h-[30px] bg-black rounded-full mt-[450px] ml-[-70px] flex items-center justify-center text-white font-bold py-2 px-4">
+  <button className="w-[120px] h-[30px] bg-black rounded-full mt-[470px] ml-[-70px] flex items-center justify-center text-white font-bold py-2 px-4">
     Create
   </button>
 </div>
