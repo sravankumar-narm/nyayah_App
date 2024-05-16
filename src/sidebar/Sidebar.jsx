@@ -35,6 +35,7 @@ const Sidebar = ({children}) => {
 
     const expandIcon = expanded ? "<" : ">";
 
+
   return (
     <div className={`main-app ${expanded ? 'expanded' : ''}`}>
         <div className="sidebar-main">
@@ -42,7 +43,10 @@ const Sidebar = ({children}) => {
             <div className={`sidebar-list ${expanded ? 'expanded' : ''}`}>
                 <div className={`expand-button ${expanded ? 'expanded' : ''}`} onClick={toggleSidebar}>
                         <img src={expandbutton} alt="expand-button" />
-                       
+                        <div className="flex items-center justify-center w-full h-full z-1 mt-[-28px] ml-[1px] ">
+        <span >{expandIcon}</span>
+    </div>
+
                     </div>
                     <NavLink className="nav-link nav-link-dash img-hover" >
                     <div className="nav-content">

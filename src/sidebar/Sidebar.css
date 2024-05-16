@@ -3,8 +3,8 @@
 /* Sidebar container */
 .sidebar-main {
     display: flex;
-    width: 60px; /* Default width */
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    width: 60px; 
+    transition: width 0.3s ease; 
     background: black;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
    /* margin-left: 55px; */
@@ -20,11 +20,11 @@
   height: calc(100vh - 50px);
   
 }
-/* Expanded state */
+
 .main-app.expanded .sidebar-main {
-    width: 200px; /* Expanded width */
+    width: 200px; 
     display: flex;
-    transition: width 0.3s ease; /* Smooth transition for width change */
+    transition: width 0.3s ease; 
     background: black;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
    /* margin-left: 55px; */
@@ -33,7 +33,7 @@
     position: fixed;
 }
 
-/* Container for the content */
+
 .layout-main {
     position: fixed;
     top: 0;
@@ -43,13 +43,13 @@
     display: flex;
 }
 
-/* Main content */
+
 .main-div-content {
     flex: 1;
-    margin-left: 60px; /* Match the width of the sidebar */
+    margin-left: 60px; 
 }
 
-/* Expand button */
+
 .expand-button{
   position: absolute;
   width: 10px;
@@ -65,7 +65,7 @@
   transition: width 0.3s ease;
 }
 
-/* Sidebar list */
+
 .sidebar-list {
     display: flex;
     flex-direction: column;
@@ -78,7 +78,7 @@
 }
 
 .sidebar-list.expanded {
-  padding-left: 40px; /* Increase padding when expanded */
+  padding-left: 40px; 
   padding-top: 60px;
   display: flex;
   flex-direction: column;
@@ -89,7 +89,7 @@
 }
 
 
-/* Line separator */
+
 .line1 {
     width: 102px;
     height: 2px;
@@ -97,25 +97,25 @@
 }
 
 .main-app.expanded .line1 {
-  margin-left: -65px; /* Adjust the margin when expanded */
+  margin-left: -65px;
 }
 
-/* Line 2 image */
+
 .expandLine {
-  width: 102px; /* Set the width of line 2 image */
-  height: 2px; /* Set the height of line 2 image */
-  margin-left: -45px; /* Adjust the margin */
+  width: 102px; 
+  height: 2px; 
+  margin-left: -45px; 
 }
 
-/* Expanded state */
+
 .main-app.expanded .expandLine {
-  margin-left: -135px; /* Adjust the margin when expanded */
+  margin-left: -135px; 
 }
 .sidebar-container {
-  position: relative; /* Ensure the container is positioned relatively */
+  position: relative; 
 }
 
-/* Tooltip */
+
 .sidebar-tooltip {
     background-color: #313265 !important;
     color: #fff !important;
@@ -124,27 +124,27 @@
     z-index: 1000;
 }
 
-/* Nav icon */
+
 .nav-icon {
     width: 20px;
     height: 20px;
 }
 
-/* Additional styles for nav links if needed */
+
 .nav-text {
   color: white;
-  margin-left: 10px; /* Adjust as needed */
-  vertical-align: middle; /* Align text vertically with the icon */
+  margin-left: 10px; 
+  vertical-align: middle; 
   white-space: nowrap;
 }
 
 .nav-link {
   display: flex;
-  align-items: center; /* Align items vertically */
-  text-decoration: none; /* Remove default underline */
+  align-items: center;
+  text-decoration: none; 
 }
 
 .nav-content {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
 }

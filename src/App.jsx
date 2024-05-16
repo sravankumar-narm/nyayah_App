@@ -15,6 +15,11 @@ import AddUser from './adduser/adduser.jsx';
 import CreateCase from './createcase/createcase.jsx';
 import Dashboard from './dashboard/dashboard.jsx';
 import Sidebar from './sidebar/Sidebar.jsx';
+import DocVerify from './docVerification/docVerification.jsx';
+import Case from './case/case.jsx';
+import CaseDoc from './casedoc/casedoc.jsx';
+import CaseVerify from './caseverify/caseverify.jsx';
+import CaseView from './caseview/caseview.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,7 +34,11 @@ function App() {
             <Route path="createcase" element={<CreateCase />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="sidebar" element={<Sidebar/>} />
-
+            <Route path="docVerification" element={<DocVerify />} />
+            <Route path="case" element={<Case />} />
+            <Route path="casedoc"  element={<CaseDoc/>} />
+            <Route path="caseverify"  element={<CaseVerify/>} />
+            <Route path="caseview"  element={<CaseView/>} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -182,7 +182,7 @@ const Home = () => {
   </div>
 </div>
 {showPricing ? (
-    <div style={{ position: 'absolute', left: '830px', top: '144px', width: '364px', height: '423px', fontFamily: 'Open Sans', fontWeight: '600', fontSize: '10px', fontStyle: 'italic' }}>
+    <div style={{ position: 'absolute', left: '830px', top: '194px', width: '364px', height: '423px', fontFamily: 'Open Sans', fontWeight: '600', fontSize: '10px', fontStyle: 'italic' }}>
     {/* Pricing Content */}
     <div className={styles.pricingContainer} style={{ fontFamily: 'Open Sans', fontWeight: '600', fontSize: '18px', fontStyle: 'italic' }}>
     <p style={{ fontSize: '18px', lineHeight: '3' , textAlign:"center"}}>
@@ -245,7 +245,7 @@ upholding the highest standards of professionalism in every aspect of our operat
 <br></br>
 <br></br>
 
-<p style={{ fontFamily: 'Open Sans', fontSize: '12px', lineHeight: '1.5', fontWeight:600 , color:"#323232" , marginTop:"-45px"}}>
+<p style={{ fontFamily: 'Open Sans', fontSize: '12px', lineHeight: '1.5', fontWeight:600 , color:"#323232" , marginTop:"-15px"}}>
   <img src={mailIcon} alt="Mail Icon" width="16" height="17" style={{ display: "inline-block", verticalAlign: "middle",marginRight:"5px" }} />
   <u><a href="mailto:info@nyayah.in">info@nyayah.in</a></u>| 
   <u><a href="mailto:sales@nyayah.in">sales@nyayah.in</a></u>
@@ -256,7 +256,7 @@ upholding the highest standards of professionalism in every aspect of our operat
     <div className={styles.contactUsContainer} style={{ position:"absolute", left: '687px', top: '0px', width: '370px', height: '547px' }}>
     <h2 style={{ fontFamily: 'Open Sans', fontSize: '40px', fontWeight: 'bold', marginLeft:"-60px" }}>Contact Us</h2>
     {/*  contact form */}
-    <form className={styles.contactForm} style={{fontFamily:"Open Sans",fontSize:"15px", fontWeight:"600", marginLeft:"30px"}}>
+    <form className={styles.contactForm} style={{fontFamily:"Open Sans",fontSize:"15px", fontWeight:"600", marginLeft:"30px", marginTop:"20px"}}>
       <div className={styles.formGroup} style={{textAlign:"left",marginLeft:"20px"}}>
         <label htmlFor="name">Name</label><br />
         <input type="text" id="name" name="name"  placeholder=""   style={{ width: '336px',height:'25px', border: '2px solid #B2B2B2', borderRadius: '5px' ,marginBottom: '15px' }} />
@@ -273,26 +273,26 @@ upholding the highest standards of professionalism in every aspect of our operat
         <label htmlFor="message">Message</label><br />
         <textarea id="message" name="message" rows="4" placeholder="" style={{ width: '336px', height:'174px' , border: '2px solid #B2B2B2', borderRadius: '5px',marginBottom: '15px' }}></textarea>
       </div>
-      <button type="submit" className={styles.sendMessageButton} style={{ backgroundColor: 'black', height: '30px', width: '335px', borderRadius: '5px', border: 'none', color: '#fff', fontFamily:"Open Sans", fontWeight:600 , marginLeft:"22px", marginTop:"8px"}}>Send Message</button>
+      <button type="submit" className={styles.sendMessageButton} style={{ backgroundColor: 'black', height: '30px', width: '335px', borderRadius: '5px', border: 'none', color: '#fff', fontFamily:"Open Sans", fontWeight:600 , marginLeft:"22px", marginTop:"18px"}}>Send Message</button>
     </form>
   </div>
   </div>
   ) : showLoginForm ? (
-    <div className={styles.loginFormContainer} style={{ position: 'absolute', fontFamily: "Poppins", left: '814px', top: '300px', width: '399px', height: '170px', backgroundColor: 'white', borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', padding: '20px' }}>
+    <div className={styles.loginFormContainer} style={{ position: 'absolute', fontFamily: "Poppins", left: '814px', top: '220px', width: '399px', height: '160px', backgroundColor: 'white', borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', padding: '20px' }}>
 
   <div style={{ marginBottom: '20px', position: 'relative' }}>
     <img src={userid} alt="User Icon" style={{ position: 'absolute', left: '5px', top: '50%', transform: 'translateY(-50%)', width: '19px', height: '15px' }} />
-    <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} style={{ borderBottom: '1px solid #B2B2B2', borderLeft: 'none', fontFamily: 'Poppins', borderTop: 'none', borderRight: 'none', outline: 'none', width: '258px', padding: '5px 0', fontSize: '16px' }} required />
+    <input type="text" placeholder="Username *" value={username} onChange={(e) => setUsername(e.target.value)} style={{ borderBottom: '1px solid #B2B2B2', borderLeft: 'none', fontFamily: 'Poppins', borderTop: 'none', borderRight: 'none', outline: 'none', width: '258px', padding: '5px 0', fontSize: '16px' }} required />
     {formSubmitted && username === '' && <p style={{ color: 'black', fontSize: '10px', position: 'absolute', top: 'calc(100% + 5px)', left: '50px'}}>This field is required.</p>}
-    <span className="required-symbol" style={{ color: '#B2B2B2', position: 'absolute', left: 'calc(100% - 55px)', top: '50%', transform: 'translateY(-50%)' }}>*</span>
+    {/* <span className="required-symbol" style={{ color: '#B2B2B2', position: 'absolute', left: 'calc(100% - 220px)', top: '50%', transform: 'translateY(-50%)' }}>*</span> */}
   </div>
 
   <div style={{ marginBottom: '20px', position: 'relative' }}>
   <img src={password1} alt="Password Icon" style={{ position: 'absolute', left: '5px', top: '50%', transform: 'translateY(-50%)', width: '19px', height: '19px' }} />
-  <input type={showPassword ? 'text' : 'password'} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{ borderBottom: '1px solid #B2B2B2', fontFamily: 'Poppins', borderLeft: 'none', borderTop: 'none', borderRight: 'none', outline: 'none', width: '258px', padding: '5px 0', fontSize: '16px' }} required />
+  <input type={showPassword ? 'text' : 'password'} placeholder="Password *" value={password} onChange={(e) => setPassword(e.target.value)} style={{ borderBottom: '1px solid #B2B2B2', fontFamily: 'Poppins', borderLeft: 'none', borderTop: 'none', borderRight: 'none', outline: 'none', width: '258px', padding: '5px 0', fontSize: '16px' }} required />
   {formSubmitted && password === '' && <p style={{ color: 'black', fontSize: '10px', position: 'absolute', top: 'calc(100% + 5px)', left: '50px' }}>This field is required.</p>}
   
-  <span className="required-symbol" style={{ color: '#B2B2B2', position: 'absolute', left: 'calc(100% - 55px)', top: '50%', transform: 'translateY(-50%)' }}>*</span>
+  {/* <span className="required-symbol" style={{ color: '#B2B2B2', position: 'absolute', left: 'calc(100% - 225px)', top: '50%', transform: 'translateY(-50%)' }}>*</span> */}
   <div
     style={{ position: 'absolute', left: '270px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
     onClick={togglePasswordVisibility}
@@ -326,7 +326,7 @@ upholding the highest standards of professionalism in every aspect of our operat
   
   <div>
     
-    <div className={styles.imageContainer} style={{ position: 'absolute', top: '185px', left: '888px', textAlign: "center" }}>
+    <div className={styles.imageContainer} style={{ position: 'absolute', top: '125px', left: '915px', textAlign: "center" }}>
       <img src={drafting} alt="img" width={120} height={120} />
       <p style={{ fontFamily: 'Open Sans', fontSize: '16px', fontWeight: 600, marginTop: "-75px" }}>Drafting</p>
       <div className={styles.hoverBox}>
@@ -336,10 +336,10 @@ upholding the highest standards of professionalism in every aspect of our operat
             Forms and Documents</p>
         </div>
     </div>
-    <div className={styles.imageContainer} style={{ position: 'absolute', top: '260px', left: '1017px', textAlign: "center" }}>
+    <div className={styles.imageContainer} style={{ position: 'absolute', top: '200px', left: '1017px', textAlign: "center" }}>
       <img src={AIpowered} alt="img" width={153} height={153} />
     </div>
-    <div className={styles.imageContainer} style={{ position: 'absolute', top: '454px', left: '966px', textAlign: "center" }}>
+    <div className={styles.imageContainer} style={{ position: 'absolute', top: '394px', left: '966px', textAlign: "center" }}>
       <img src={andMore} alt="img" width={120} height={120} />
       <p style={{ fontFamily: 'Open Sans', fontSize: '16px', fontWeight: 600, marginTop: "-95px" }}>...<br></br>And<br></br>More</p>
       <div className={styles.hoverBox1} style={{marginTop:"50px"}}>
@@ -348,7 +348,7 @@ upholding the highest standards of professionalism in every aspect of our operat
 and Reports </p>
   </div>
     </div>
-    <div className={styles.imageContainer} style={{ position: 'absolute', top: '531px', left: '800px', textAlign: "center" }}>
+    <div className={styles.imageContainer} style={{ position: 'absolute', top: '471px', left: '800px', textAlign: "center" }}>
       <img src={docVerify} alt="img" width={120} height={120} />
       <p style={{ fontFamily: 'Open Sans', fontSize: '16px', fontWeight: 600, marginTop: "-85px" }}>Documents<br></br>Verification</p>
       <div className={styles.hoverBox2} style={{marginTop:"50px"}} >
@@ -358,7 +358,7 @@ and Reports </p>
     of Documents</p>
   </div>
     </div>
-    <div className={styles.imageContainer} style={{ position: 'absolute', top: '286px', left: '802px', textAlign: "center" }}>
+    <div className={styles.imageContainer} style={{ position: 'absolute', top: '226px', left: '802px', textAlign: "center" }}>
       <img src={intelligentCit} alt="img" width={120} height={120} />
       <p style={{ fontFamily: 'Open Sans', fontSize: '16px', fontWeight: 600, marginTop: "-85px" }}>Intelligent<br></br>Citations</p>
       <div className={styles.hoverBox3} style={{marginTop:"50px"}} >
@@ -368,16 +368,16 @@ and Reports </p>
      Highlights </p>
     </div>
     </div>
-    <div className={styles.iconContainer} style={{ position: 'absolute', marginLeft: '880.27px', top: '299.58px' }}>
+    <div className={styles.iconContainer} style={{ position: 'absolute', marginLeft: '880.27px', top: '239.58px' }}>
       <img src={line1} alt="Icon" width={68.8} height={43.84} />
     </div>
-    <div className={styles.iconContainer} style={{ position: 'absolute', left: '923.27px', top: '343.5px'}}>
+    <div className={styles.iconContainer} style={{ position: 'absolute', left: '923.27px', top: '283.5px'}}>
       <img src={line2} alt="Icon" width={94} height={20.96} />
     </div>
-    <div className={styles.iconContainer} style={{ position: 'absolute', left: '860.38px', top: '343.32px' }}>
+    <div className={styles.iconContainer} style={{ position: 'absolute', left: '860.38px', top: '283.32px' }}>
       <img src={line3} alt="Icon" width={158} height={238.29} />
     </div>
-    <div className={styles.iconContainer} style={{ position: 'absolute', left: '970.38px', top: '343.96px' }}>
+    <div className={styles.iconContainer} style={{ position: 'absolute', left: '970.38px', top: '283.96px' }}>
       <img src={line4} alt="Icon" width={45.24} height={108.58} />
     </div>
   </div>
@@ -386,14 +386,14 @@ and Reports </p>
 {showAboutUs ? null : (
   <>
   {!showLoginForm && !showPricing && (
-    <div className={styles.buttonContainer} style={{ position: 'absolute', left: '805px', top: '680px', width: '370px', height: '30px', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius:"5px" }}>
+    <div className={styles.buttonContainer} style={{ position: 'absolute', left: '805px', top: '620px', width: '370px', height: '30px', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius:"5px" }}>
       <button className={styles.button} style={{ color: 'white', backgroundColor: 'black', border: 'none', textAlign: 'center',fontSize:"14px", cursor: 'pointer' }} onClick={toggleFormVisibility}>Contact us to know more</button>
     </div>
   )}
-    <div className={styles.textContainer} style={{ position: 'absolute', left: '730px', top: '786px', width: '563px', height: '46px', fontFamily: 'Open Sans', fontSize: '10px' }}>
+    <div className={styles.textContainer} style={{ position: 'absolute', left: '730px', top: '700px', width: '563px', height: '46px', fontFamily: 'Open Sans', fontSize: '10px' }}>
       © 2024 NARM Tech - an AI Products Company | Visited by 0,0,000 User | All Rights Reserved
     </div>
-    <div className={styles.formContainer} style={{ position: 'absolute', left: '800px',top: '183px' , bottom: showForm ? '0px' : '-479px', width: '379px', height: '479px', backgroundColor: 'white', borderRadius: '5px', transition: 'bottom 0.5s ease-in-out', display: showForm ? 'block' : 'none' }}>
+    <div className={styles.formContainer} style={{ position: 'absolute', left: '800px',top: '123px' , bottom: showForm ? '0px' : '-479px', width: '379px', height: '479px', backgroundColor: 'white', borderRadius: '5px', transition: 'bottom 0.5s ease-in-out', display: showForm ? 'block' : 'none' }}>
          
             <form className={styles.contactForm} style={{fontFamily:"Open Sans",fontSize:"15px", fontWeight:"600", marginLeft:"18px"}}>
       <div className={styles.formGroup} style={{textAlign:"left"}}>
@@ -420,7 +420,7 @@ and Reports </p>
     </form>
           </div>
           {/* for pricing */}
-          <div className="absolute left-[827px] top-[310px] transform -translate-y-1/2" style={{ bottom: showForm2 ? '0px' : '-479px', width: '379px', height: '479px', backgroundColor: 'white', borderRadius: '5px', transition: 'bottom 0.5s ease-in-out', display: showForm2 ? 'block' : 'none' }}>
+          <div className="absolute left-[827px] top-[350px] transform -translate-y-1/2" style={{ bottom: showForm2 ? '0px' : '-479px', width: '379px', height: '479px', backgroundColor: 'white', borderRadius: '5px', transition: 'bottom 0.5s ease-in-out', display: showForm2 ? 'block' : 'none' }}>
          
          <form className={styles.contactForm} style={{fontFamily:"Open Sans",fontSize:"15px", fontWeight:"600", marginLeft:"18px"}}>
    <div className={styles.formGroup} style={{textAlign:"left"}}>

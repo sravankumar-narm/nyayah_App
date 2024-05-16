@@ -15,10 +15,15 @@ import personal_details from '../assets/Images/adduser/personal_details.png'
 import advocate from '../assets/Images/adduser/advocate.png'
 import current_address from '../assets/Images/adduser/current_add.png'
 import permanent_address from '../assets/Images/adduser/permanent_add.png'
+import party_details from '../assets/Images/docverify/party_details.png'
+import property_details from '../assets/Images/docverify/property_details.png'
+import survey_details from '../assets/Images/docverify/survey_details.png'
+import total_area from '../assets/Images/docverify/total_area.png'
+import newimg from '../assets/Images/createcase/new.png';
 import CreatableSelect from 'react-select/creatable';
 
 
-const AddUser = () => {
+const  DocVerify = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -60,162 +65,154 @@ const AddUser = () => {
           
 </div>
 <div className="flex z-0" >
-<div className="flex" style={{ marginLeft: '200px', marginTop:"100px" }}>
-        <select className="w-60 h-7 border border-gray-400 rounded-lg mr-4 text-xs">
-            <option value="">User Type</option>
-            {/* options */}
-        </select>
-        <input type="text" className="w-60 h-7 border border-gray-400 rounded-lg mr-4 pl-2 text-sm" placeholder="User ID (Auto generated)" />
-        <input type="text" className="w-60 h-7 border border-gray-400 rounded-lg mr-4 pl-2 text-sm" placeholder="User Full Name (Auto generated)" />
-        <input type="text" className="w-60 h-7 border border-gray-400 rounded-lg pl-2 text-sm" placeholder="Password (Auto generated)" />
+<div className="flex" style={{ marginLeft: '140px', marginTop: "100px" }}>
+  <div className='ml-[70px]'>
+    <input 
+      type="text" 
+      className="w-[700px] h-[30px] border border-gray-400 rounded-lg pl-2 text-sm" 
+      placeholder="Case Title" 
+    />
+    <select 
+      className="w-[300px] h-[30px] border border-gray-400 rounded-lg ml-2 text-xs"
+    >
+      <option value="">Property Type</option>
+      {/* options */}
+    </select>
+  </div>
+</div>
+
+<div className="flex z-0 relative" style={{marginLeft:"-1172px"}}>
+  <div className=' relative flex w-[1008px] h-[246px] bg-white border border-gray-400 pl-[25px] pr-[25px] rounded-lg mt-[150px] ml-[164px]'>
+  <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "40px", marginTop: "-12px", fontSize: "12px" }}>
+      <img src={party_details} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
+      <span style={{ marginLeft: "24px" }}>Party Details</span>
     </div>
-<div className="flex z-0 relative" style={{marginLeft:"-1170px"}}>
-  <div className="relative w-160 h-48 bg-white border border-gray-400 rounded-lg ml-40 mt-40 mr-4 p-4" style={{ width: "491px", height: "200px" }}>
+    
+  <div className="relative w-160 h-48 bg-white border border-gray-400 rounded-lg mt-8 mr-4 p-4" style={{ width: "491px", height: "200px" }}>
     <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "40px", marginTop: "-12px", fontSize: "12px" }}>
       <img src={personal_details} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
       <span style={{ marginLeft: "24px" }}>Personal Details</span>
     </div>
     <div className="flex mt-2">
-      <input type="text" className="w-1/2 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="First Name"  style={{ borderColor: '#D9D9D9' }}/>
-      <input type="text" className="w-1/2 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Middle Name" style={{ borderColor: '#D9D9D9' }} />
-      <input type="text" className="w-1/2 h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Last Name"  style={{ borderColor: '#D9D9D9' }}/>
+    <select className="w-1/3 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
+        <option value="">Party Type</option>
+        
+      </select>
+      <select className="w-1/2 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
+        <option value="">Party 1</option>
+        
+      </select>
+      <img src={newimg} className="h-6 w-5 ml-2 mt-1" alt="Icon 1" />
     </div>
     <div className="flex mt-4">
     <div className="flex items-center">
-  <select
-    className="h-7 border border-gray-400 rounded-l-lg text-xs"
-    style={{ borderColor: '#D9D9D9', paddingRight: '5px' }}
-  >
-    <option value="+91">+91</option>
-    {/* Add more country code options as needed */}
-  </select>
-  <input
-    type="text"
-    className="w-[100px] h-7 border border-gray-400 rounded-r-lg pl-2 mr-1 text-xs"
-    placeholder="Mobile Number"
-    style={{ borderColor: '#D9D9D9' }}
-  />
-</div>
-
-      <input type="text" className="w-[350px] h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Email ID" style={{ borderColor: '#D9D9D9' }} />
+    <input type="text" className="w-1/3 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Party ID" style={{ borderColor: '#D9D9D9' }} />
+      <input type="text" className="w-[270px] h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Full Name"  style={{ borderColor: '#D9D9D9' }}/>
+    </div>
     </div>
     <div className="flex mt-4">
-    <input
-      type="date"
-      className="w-32 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs"
-      style={{ borderColor: '#D9D9D9' }}
-      placeholder="DOB"
-    />
-      <input type="text" className="w-11/12 h-7 border-b border-gray-400 pl-2 text-xs" placeholder="00 Year(s) 00 Month(s) and 00 Day(s) Old" />
+    <input type="text" className="w-1/3 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="DD:MM:YYYY" style={{ borderColor: '#D9D9D9' }} />
+      <input type="text" className="w-[270px] h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Email ID"  style={{ borderColor: '#D9D9D9' }}/>
     </div>
     <div className="flex mt-4">
-      <select className="w-1/3 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
-        <option value="">Occupation</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </select>
-      <select className="w-1/3 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
-        <option value="">Marital Status</option>
-        <option value="single">Single</option>
-        <option value="married">Married</option>
-        <option value="divorced">Divorced</option>
-      </select>
-      <select className="w-1/3 h-7 border border-gray-400 rounded-lg pl-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
-        <option value="">Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
+    <input type="text" className="w-1/3 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Gender" style={{ borderColor: '#D9D9D9' }} />
+      <input type="text" className="w-[270px] h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Mobile Number"  style={{ borderColor: '#D9D9D9' }}/>
     </div>
   </div>
 
-  <div className="relative w-160 h-48 bg-white border border-gray-400 rounded-lg p-4 mt-40 ml-4" style={{ width: "491px", height: "200px" }}>
+  <div className="relative w-160 h-48 bg-white border border-gray-400 rounded-lg p-4 mt-8 ml-2" style={{ width: "491px", height: "200px" }}>
   <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "40px", marginTop: "-12px", fontSize: "12px" }}>
-      <img src={advocate} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
-      <span style={{ marginLeft: "24px" }}>Advocate</span>
-  </div>
-
-  <div className="flex mt-2">
-    <select className="w-40 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
-      <option value="">Bar Council</option>
-    </select>
-    <input type="text" className="flex-grow h-7 border-b border-gray-400 pl-2 text-xs" placeholder="Reg ID" />
-  </div>
-  <div className="flex mt-4">
-    <input type="text" className="flex-grow h-7 border-b border-gray-400 pl-2 text-xs" placeholder="Reg Date" />
-    <input type="text" className="flex-grow h-7 border-b border-gray-400 pl-2 text-xs ml-2" placeholder="Place of Practice" />
-  </div>
-  <div className="flex mt-4">
-    <input type="date" className="w-32 h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}/>
-    <input type="text" className="flex-grow h-7 border-b border-gray-400 pl-2 text-xs" placeholder="00 Year(s) 00 Month(s) and 00 Day(s) of Experience" />
-  </div>
-</div>
-</div>
-     <div className="flex mt-4" style={{marginTop:"400px", marginLeft:"-1015px"}}>
-    <div className="relative w-160 h-48 bg-white border border-gray-400 rounded-lg p-4 mr-8" style={{width:"491px", height:"200px"}}>
-    <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "40px", marginTop: "-12px", fontSize: "12px" }}>
       <img src={current_address} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
-      <span style={{ marginLeft: "24px" }}>Current Address</span>
-    </div>
-      {/* Content for the first additional box */}
-      <div className=" flex mt-0">
-  <input type="text" className="flex-grow h-7 border-b border-gray-400 pl-2 text-xs" placeholder="Address" style={{ borderColor: '#8D8D8D' }} />
-</div>
-<div className="flex mt-4">
-<div className="flow-grow relative ml-[-10px]">
-<CreatableSelect
-          className="  pl-2 text-xs focus:outline-none "
-          styles={{ control: (provided) => ({ ...provided, borderColor: '#D9D9D9' ,borderRadius: '10px', height: '20px',  minHeight: '28px',display: 'flex', alignItems: 'center', justifyContent:'center', paddingBottom: '10px' }) 
-          
-        }}
-          onChange={handleChange}
-          options={[
-            { value: 'option1', label: 'Option 1' },
-            { value: 'option2', label: 'Option 2' },
-          ]}
-          placeholder="Pincode"
-          value={selectedOption}
-        />
-  
-</div>
+      <span style={{ marginLeft: "24px" }}>Party Address</span>
+  </div>
 
-  <select className=" flex-grow h-7 border border-gray-400 rounded-lg pl-2 ml-2  text-xs" style={{ borderColor: '#D9D9D9', marginLeft:"20px" }}>
-    <option value="">Location</option>
-  </select>
-</div>
-<div className="flex mt-4">
-  <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Mandal" style={{ borderColor: '#D9D9D9' }} />
-  <input type="text" className="flex-grow h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="District" style={{ borderColor: '#D9D9D9' }} />
-</div>
-<div className="flex mt-4">
-  <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="State" style={{ borderColor: '#D9D9D9' }} />
-  <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Country" style={{ borderColor: '#D9D9D9' }} />
-</div>
- 
-    </div>
-    <div className="relative w-160 h-48 bg-white border border-gray-400 rounded-lg p-4"style={{width:"491px", height:"200px"}}>
-    <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "40px", marginTop: "-12px", fontSize: "12px" }}>
-      <img src={permanent_address} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
-      <span style={{ marginLeft: "24px" }}>Permanent Address</span>
-    </div>
-      {/* Content for the second additional box */}
-      <div className="flex mt-0">
+  <div className="flex mt-0">
   <input type="text" className="flex-grow h-7 border-b  border-gray-400 pl-2 text-xs" placeholder="Address" style={{ borderColor: '#8D8D8D' }} />
 </div>
 <div className="flex mt-4">
+<input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Pincode" style={{ borderColor: '#D9D9D9', color:"#C6C6C6" }} />
+  <input type="text" className="flex-grow h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Village" style={{ borderColor: '#D9D9D9' }} />
+</div>
+<div className="flex mt-4">
+  <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Mandal" style={{ borderColor: '#D9D9D9', color:"#C6C6C6" }} />
+  <input type="text" className="flex-grow h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="District" style={{ borderColor: '#D9D9D9' }} />
+</div>
+<div className="flex mt-4">
+  <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="State" style={{ borderColor: '#D9D9D9' }}/>
+  <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Country" style={{ borderColor: '#D9D9D9' }} />
+</div>
+</div>
+
+</div>
+</div>
+     <div className="flex mt-6" style={{marginTop:"400px", marginLeft:"-1022px"}}>
+     <div className=' relative flex w-[1008px] h-[246px] bg-white border border-gray-400 pl-[25px] pr-[25px] rounded-lg mt-[35px] ml-[15px]'>
+  <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "40px", marginTop: "-12px", fontSize: "12px" }}>
+      <img src={personal_details} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
+      <span style={{ marginLeft: "24px" }}>Property Details</span>
+    </div>
+    <div className="relative w-160 h-48 bg-white border border-gray-400 rounded-lg p-4 mt-8 mr-8" style={{width:"471px", height:"200px"}}>
+    <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "40px", marginTop: "-12px", fontSize: "12px" }}>
+      <img src={survey_details} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
+      <span style={{ marginLeft: "24px" }}>Survey Details</span>
+    </div>
+    <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "230px", marginTop: "-12px", fontSize: "12px" }}>
+      <img src={survey_details} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
+      <span style={{ marginLeft: "24px" }}>Total Area: 23.4 Acers</span>
+    </div>
+    
+      {/*  first additional box */}
+      <div className=" flex mt-4">
+      <input type="text" className="w-[120px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Survey Number"  style={{ borderColor: '#D9D9D9' }}/>
+      <input type="text" className="w-[140px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Area" style={{ borderColor: '#D9D9D9' }} />
+      <select className="w-[150px] h-7 border border-gray-400 rounded-lg pl-2  text-xs" style={{ borderColor: '#D9D9D9' }}>
+        <option value="">Units</option>
+        
+      </select>
+      <img src={newimg} className="h-6 w-5 ml-0 mt-1" alt="Icon 1" />
+</div>
+<div className="flex mt-4">
+<input type="text" className="w-[120px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Survey Number"  style={{ borderColor: '#D9D9D9' }}/>
+      <input type="text" className="w-[140px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Area" style={{ borderColor: '#D9D9D9' }} />
+      <select className="w-[150px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
+        <option value="">Units</option>
+        
+      </select>
+
+</div>
+
+<div className="flex mt-4">
+<input type="text" className="w-[120px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Survey Number"  style={{ borderColor: '#D9D9D9' }}/>
+      <input type="text" className="w-[140px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="Area" style={{ borderColor: '#D9D9D9' }} />
+      <select className="w-[150px] h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" style={{ borderColor: '#D9D9D9' }}>
+        <option value="">Units</option>
+        
+      </select>
+</div>
+
+ 
+    </div>
+    <div className="relative w-160 h-48 bg-white border border-gray-400 mt-8 rounded-lg p-4"style={{width:"471px", height:"200px" , marginLeft:"-8px"}}>
+    <div className="absolute top-0 left-0 bg-white border border-gray-400 rounded-full h-6 w-[164px] p-2 flex items-center" style={{ marginLeft: "20px", marginTop: "-12px", fontSize: "12px" }}>
+      <img src={permanent_address} className="absolute left-0 top-1/2 transform -translate-y-1/2 ml-2" style={{ height: "16px", width: "16px" }} alt="icon" />
+      <span style={{ marginLeft: "24px" }}>Location Details</span>
+    </div>
+      {/*  second additional box */}
+      <div className="flex mt-0">
+  <input type="text" className="w-[160px] h-7 border-b  border-gray-400 pl-2 text-xs" placeholder="Village" style={{ borderColor: '#8D8D8D' }} />
+  <input type="text" className="w-[160px] h-7 border-b  border-gray-400 pl-2 text-xs ml-8" placeholder="Revenue Division" style={{ borderColor: '#8D8D8D' }} />
+</div>
+<div className="flex mt-4">
 <div className="flow-grow relative ml-[-10px]">
 <CreatableSelect
-          className="  pl-2 text-xs focus:outline-none "
-          styles={{ control: (provided) => ({ ...provided, borderColor: '#D9D9D9' ,borderRadius: '10px', height: '20px',  minHeight: '28px',display: 'flex', alignItems: 'center', justifyContent:'center' }) 
-          
-        }}
+          className="  pl-2 text-xs focus:outline-none"
+          styles={{ control: (provided) => ({ ...provided, borderColor: '#D9D9D9' }) }}
           onChange={handleChange}
           options={[
             { value: 'option1', label: 'Option 1' },
             { value: 'option2', label: 'Option 2' },
           ]}
-          placeholder="Pincode"
+          placeholder="Select or type..."
           value={selectedOption}
         />
   
@@ -233,8 +230,9 @@ const AddUser = () => {
   <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 mr-2 text-xs" placeholder="State" style={{ borderColor: '#D9D9D9' }}/>
   <input type="text" className="flex-grow  h-7 border border-gray-400 rounded-lg pl-2 text-xs" placeholder="Country" style={{ borderColor: '#D9D9D9' }} />
 </div>
+</div>
     </div>
-    <div className="flex mt-4 ml-40 " style={{marginTop:"250px", marginLeft:"-1010px"}}>
+    <div className="flex mt-6 ml-40 " style={{marginTop:"450px", marginLeft:"-1000px"}}>
  
   <div className="w-4 h-4 mt-2 flex items-center justify-center mr-6">
   <img src={icon1} alt="Logo"  />
@@ -386,7 +384,7 @@ const AddUser = () => {
    </div>
  </div>
 </div>
-<div className="flex justify-center mt-4">
+<div className="flex justify-center mt-20">
   <button className="w-[120px] h-[30px] bg-black rounded-full mt-[450px] ml-[-20px] flex items-center justify-center text-white font-bold py-2 px-4">
     Create
   </button>
@@ -407,4 +405,4 @@ const AddUser = () => {
   );
 };
 
-export default AddUser;
+export default DocVerify;

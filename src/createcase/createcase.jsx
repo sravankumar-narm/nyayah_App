@@ -75,13 +75,13 @@ const CreateCase = () => {
     <div className="flex mt-4 items-center">
       <select className="w-[420px] h-10 border border-gray-400 rounded-md pl-2 mr-1 text-xs">
         <option value="">Plaintiff</option>
-        {/* Add options here */}
+        {/*  options */}
       </select>
       <img src={versus} className="h-6 w-6 mx-1 ml-[20px] mr-[25px]" alt="Icon" />
       <div className="flex items-center">
     <select className="w-[420px] h-10 border border-gray-400 rounded-md pl-2 text-xs">
       <option value="">Defendant</option>
-      {/* Add options here */}
+      {/*  options*/}
     </select>
     <img src={newimg} className="h-8 w-7 ml-[25px]" alt="Second Icon" />
   </div>
@@ -103,41 +103,41 @@ const CreateCase = () => {
         <img src={voice} className="h-5 w-4" alt="icon1" />
         <img src={doc} className="h-5 w-4 ml-2" alt="icon2" />
       </div>
-    {/* Content for the first additional box */}
+    {/*  first additional box */}
   </div>
   <div className="flex flex-col" style={{ marginLeft: "0px" }}>
   <div className="flex items-center mb-4">
     <select className="w-64 h-10 border border-gray-400 rounded-md pl-2 text-xs">
       <option value="">Case Type</option>
-      {/* Add options here */}
+      {/*options*/}
     </select>
     <img src={newimg} className="h-6 w-5 ml-2" alt="Icon 1" />
   </div>
   <div className="flex items-center mb-4">
     <select className="w-64 h-10 border border-gray-400 rounded-md pl-2 text-xs">
       <option value="">Court</option>
-      {/* Add options here */}
+      {/*options */}
     </select>
     <img src={newimg} className="h-6 w-5 ml-2" alt="Icon 2" />
   </div>
   <div className="flex items-center mb-4">
     <select className="w-64 h-10 border border-gray-400 rounded-md pl-2 text-xs">
       <option value="">Priority</option>
-      {/* Add options here */}
+      {/* options*/}
     </select>
     <img src={newimg} className="h-6 w-5 ml-2" alt="Icon 3" />
   </div>
   <div className="flex items-center">
     <select className="w-64 h-10 border border-gray-400 rounded-md pl-2 text-xs">
       <option value="">Case Stage</option>
-      {/* Add options here */}
+      {/* options*/}
     </select>
     <img src={newimg} className="h-6 w-5 ml-2" alt="Icon 4" />
   </div>
   <div className="flex whitespace-no-wrap">
   <div className="flex items-center mb-4 mr-4">
     <label htmlFor="caseRegistrationDate" className="mr-2 whitespace-no-wrap" style={{fontSize:"12px", marginTop:"20px"}}>Case Reg Date:</label>
-    <input type="date" id="caseRegistrationDate" className="w-32 h-8 border border-gray-400 rounded-md pl-2 text-xs" />
+    <input type="date" id="caseRegistrationDate" className="w-32 h-8 border border-gray-400 rounded-md mt-[15px] pl-2 text-xs" />
   </div>
   <div className="flex items-center">
     <label htmlFor="caseRecordedDate" className="mr-2 whitespace-no-wrap " style={{fontSize:"12px"}}>Case Recorded Date:</label>
