@@ -20,6 +20,7 @@ import Case from './case/case.jsx';
 import CaseDoc from './casedoc/casedoc.jsx';
 import CaseVerify from './caseverify/caseverify.jsx';
 import CaseView from './caseview/caseview.jsx'
+import Citations from './citations/citations.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -39,6 +40,7 @@ function App() {
             <Route path="casedoc"  element={<CaseDoc/>} />
             <Route path="caseverify"  element={<CaseVerify/>} />
             <Route path="caseview"  element={<CaseView/>} />
+            <Route path="citations"  element={<Citations/>} />
         </Route>
       </Routes>
     </BrowserRouter>
